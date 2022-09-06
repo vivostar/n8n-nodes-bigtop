@@ -8,6 +8,13 @@ export const clusterNOdeDiscribe: INodeProperties[] = [
         description: 'deploy host name',
     },
     {
+        displayName: 'rolesenabled',
+        name: 'rolesenabled',
+        type: 'boolean',
+        default: true, // Initial state of the toggle
+        description: 'Whether to enable components roles',
+    },
+    {
         displayName: 'roles',
         name: 'roles',
         type: 'string',

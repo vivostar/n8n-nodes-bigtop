@@ -42,13 +42,6 @@ export class BigtopDeploy implements INodeType {
 				default: 'master',
 				description: 'head node domain name',
 			},
-			{
-				displayName: 'rolesenabled',
-				name: 'rolesenabled',
-				type: 'boolean',
-				default: true, // Initial state of the toggle
-				description: 'Whether to enable components roles',
-			},
 			
 			{
 				displayName: 'storagedirs',
@@ -58,10 +51,12 @@ export class BigtopDeploy implements INodeType {
 				placeholder: '/data/1, /data/2',
 				description: 'hadoop storage dirs',
 			},
+			
+			//fix collection
 			{
-				displayName: 'clusternodes',
-				name: 'clusternodes',
-				placeholder: 'clusternodes',
+				displayName: 'Cluster Nodes',
+				name: 'clusterNodes',
+				placeholder: 'Add Cluster Node',
 				type: 'fixedCollection',
 				default: '',
 				typeOptions: {
@@ -70,12 +65,17 @@ export class BigtopDeploy implements INodeType {
 				description: '',
 				options: [
 					{
-						name: 'clusternode',
-						displayName: 'clusternode',
+						name: 'clusterNode',
+						type: 'credentialsSelect',
+						displayName: 'Cluster Node',
 						values: clusterNOdeDiscribe,
 					},
 				],
-			}
+				
+			},
+			
+			//fix collection
+
 		],
 	};
 
